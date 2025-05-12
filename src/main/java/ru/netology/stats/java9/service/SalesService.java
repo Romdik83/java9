@@ -30,15 +30,8 @@ public class SalesService {
     }
 
     public int amountAverage(long[] sales) {
-      //  int amountAverage = 0;
-      //  for (int month = 0; month < sales.length; month++) {
-      //      amountAverage +=  sales[month];
-     //   }
-      //  {
-      //      amountAverage = amountAverage / 12;
-       // }
    return (int) amountSales(sales) / sales.length;
-         // return amountAverage;
+
     }
 
     public int minAmountAverageMonth (long[] sales) {
