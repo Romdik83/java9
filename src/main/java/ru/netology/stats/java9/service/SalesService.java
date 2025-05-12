@@ -1,6 +1,7 @@
 package ru.netology.stats.java9.service;
+
 public class SalesService {
-    public int getMinSales(int[] sales) {
+    public int minSales(int[] sales) {
         int minSale = 0;
         for (int month = 0; month < sales.length; month++) {
             if (sales[month] < sales[minSale]) {
@@ -9,35 +10,59 @@ public class SalesService {
         }
         return minSale + 1;
     }
-    public int getMaxSales(long[] sales) {
+
+    public int maxSales(long[] sales) {
         int maxSales = 0;
         for (int month = 0; month < sales.length; month++) {
             if (sales[month] >= sales[maxSales]) {
                 maxSales = month;
             }
-        } return maxSales + 1;
+        }
+        return maxSales + 1;
     }
-    public int getAmount(int[] sales) {
-        int amount = 0;
-        int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        for (int month = 0; month < arr.length; month++) {
-            amount = amount + arr[month];}
 
+    public long amountSales(long[] sales) {
+        long amount = 0;
+        for (int month = 0; month < sales.length; month++) {
+            amount += sales[month];
+        }
         return amount;
     }
-    public int getAmountAverage(int[] sales) {
-        int amountAverage = 0;
-        int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        for (int month = 0; month < arr.length; month++) {
-            amountAverage = amountAverage + arr[month];}
-        {amountAverage = amountAverage / 12;}
 
-        return amountAverage;
+    public int amountAverage(long[] sales) {
+      //  int amountAverage = 0;
+      //  for (int month = 0; month < sales.length; month++) {
+      //      amountAverage +=  sales[month];
+     //   }
+      //  {
+      //      amountAverage = amountAverage / 12;
+       // }
+   return (int) amountSales(sales) / sales.length;
+         // return amountAverage;
     }
 
+    public int minAmountAverageMonth (long[] sales) {
+        int minAmountAverageMonth = 0;
+        for (int month = 0; month < sales.length; month++) {
+            if (sales[month] > amountAverage(sales)) {
+                minAmountAverageMonth ++;
+            }
+        } return minAmountAverageMonth;
+    }
 
-
+    public int maxAmountAverageMonth (long[] sales) {
+        int maxAmountAverageMonth = 0;
+        for (int month = 0; month < sales.length; month++) {
+            if (sales[month] < amountAverage(sales)) {
+                maxAmountAverageMonth ++;
+            }
+        } return maxAmountAverageMonth;
+    }
 }
+
+
+
+
 
 
 
