@@ -30,26 +30,28 @@ public class SalesService {
     }
 
     public int amountAverage(long[] sales) {
-   return (int) amountSales(sales) / sales.length;
+        return (int) amountSales(sales) / sales.length;
 
     }
 
-    public int minAmountAverageMonth (long[] sales) {
+    public int minAmountAverageMonth(long[] sales) {
         int minAmountAverageMonth = 0;
         for (int month = 0; month < sales.length; month++) {
             if (sales[month] > amountAverage(sales)) {
-                minAmountAverageMonth ++;
+                minAmountAverageMonth++;
             }
-        } return minAmountAverageMonth;
+        }
+        return minAmountAverageMonth;
     }
 
-    public int maxAmountAverageMonth (long[] sales) {
+    public int maxAmountAverageMonth(long[] sales) {
         int maxAmountAverageMonth = 0;
         for (int month = 0; month < sales.length; month++) {
             if (sales[month] < amountAverage(sales)) {
-                maxAmountAverageMonth ++;
+                maxAmountAverageMonth++;
             }
-        } return maxAmountAverageMonth;
+        }
+        return maxAmountAverageMonth;
     }
 }
 

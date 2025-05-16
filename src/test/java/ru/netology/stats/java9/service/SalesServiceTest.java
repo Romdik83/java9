@@ -35,6 +35,7 @@ public class SalesServiceTest {
         int amountAverage = service.amountAverage(sales);
         System.out.println(amountAverage);
     }
+
     @Test
     public void minAmountAverageMonth() {
         SalesService service = new SalesService();
@@ -42,6 +43,7 @@ public class SalesServiceTest {
         int minAmountAverageMonth = service.minAmountAverageMonth(sales);
         System.out.println(minAmountAverageMonth);
     }
+
     @Test
     public void maxAmountAverageMonth() {
         SalesService service = new SalesService();
